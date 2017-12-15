@@ -5,8 +5,13 @@ ROOT=$(pwd)
 echo "creating base dir"
 rm -rf "$ROOT/compiler"
 mkdir "$ROOT/compiler"
+ls
+pwd
 cd "$ROOT/compiler"
+ls
+pwd
 BASE=$(pwd)
+
 
 # install dependencies
 echo "installing dependencies"
@@ -44,15 +49,11 @@ echo "doing first build"
 "$BASE/firmware/firmware.ino" \
 >> "$BASE/output.txt"
 
-cat "$BASE/output.txt"
-
 # capture the compilation part
 cat "$BASE/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$BASE/build.sh"
 
 # capture the "link and copy" part
 cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$BASE/build.sh"
-
-cat "$BASE/build.sh"
 
 # tracefile all the used files
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
