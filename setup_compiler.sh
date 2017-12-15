@@ -52,6 +52,7 @@ cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> 
 
 # tracefile all the used files
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
+cat "$BASE/rawtrace"
 cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
 
 # delete all unused filesf
