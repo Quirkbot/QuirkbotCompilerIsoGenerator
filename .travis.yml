@@ -4,7 +4,7 @@ node_js:
 sudo: false
 dist: trusty
 script:
-  - node gulp.js package
+  - sh setup.sh
 branches:
   only:
     - develop
