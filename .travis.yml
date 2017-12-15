@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '9.2.0'
+sudo: false
+dist: trusty
+script:
+  - node gulp.js package
+branches:
+  only:
+    - develop

@@ -1,0 +1,10 @@
+#!/bin/sh
+. /etc/busybox-aliases
+
+clear
+echo "ready"
+
+sudo su
+
+cd /home
+sh init.sh
