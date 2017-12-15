@@ -5,13 +5,8 @@ ROOT=$(pwd)
 echo "creating base dir"
 rm -rf "$ROOT/compiler"
 mkdir "$ROOT/compiler"
-ls
-pwd
 cd "$ROOT/compiler"
-ls
-pwd
 BASE=$(pwd)
-
 
 # install dependencies
 echo "installing dependencies"
@@ -63,7 +58,9 @@ cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
 xargs rm -rf < "$BASE/remove.txt"
 find "$BASE" -type d -empty -delete
-rm -rf "$BASE/sketch/*"
+rm -rf "$BASE/sketch/firmare.ino.cpp"
+rm -rf "$BASE/sketch/firmare.ino.cpp.d"
+rm -rf "$BASE/sketch/firmare.ino.cpp.o"
 rm -rf "$BASE/build/firmware.ino.elf"
 rm -rf "$BASE/build/firmware.ino.hex"
 
