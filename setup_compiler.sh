@@ -2,12 +2,14 @@
 ROOT=$(pwd)
 
 # create the base dir
+echo "creating base dir"
 rm -rf "$ROOT/compiler"
 mkdir "$ROOT/compiler"
 cd "$ROOT/compiler"
 BASE=$(pwd)
 
 # install dependencies
+echo "installing dependencies"
 #tce-load -wi node strace perl5 curl
 
 #rm -rf "$BASE/node_modules"
@@ -17,15 +19,18 @@ npm install quirkbot-arduino-library@2.5.7
 npm install quirkbot-avr-gcc@1.0.1
 
 # create temp dir and setup files
+echo "creating directories"
 mkdir "$BASE/build"
 mkdir "$BASE/firmware"
 
 # create the base firmware
+echo "creating base firmware"
 echo '#include "Quirkbot.h"
 void setup(){}
 void loop(){}' >> "$BASE/firmware/firmware.ino"
 
 # do a first build and capture the output, so we can extract some info from it
+echo "doing first build"
 "$BASE/node_modules/quirkbot-arduino-builder/tools/arduino-builder" \
 -hardware="$BASE/node_modules" \
 -hardware="$BASE/node_modules/quirkbot-arduino-builder/tools/hardware" \
@@ -39,11 +44,15 @@ void loop(){}' >> "$BASE/firmware/firmware.ino"
 "$BASE/firmware/firmware.ino" \
 >> "$BASE/output.txt"
 
+cat "$BASE/output.txt"
+
 # capture the compilation part
 cat "$BASE/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$BASE/build.sh"
 
 # capture the "link and copy" part
 cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$BASE/build.sh"
+
+cat "$BASE/build.sh"
 
 # tracefile all the used files
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
@@ -60,5 +69,6 @@ rm -rf "$BASE/build/firmware.ino.hex"
 # compress the compiler
 #tar -zcvf "$BASE/../compiler.tar.gz" "$BASE"
 
+ls
 # restore dir
 cd "$ROOT"
