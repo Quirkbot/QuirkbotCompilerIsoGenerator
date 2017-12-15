@@ -52,8 +52,8 @@ cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> 
 
 # tracefile all the used files
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
-cat "$BASE/rawtrace" | xargs -n1 echo | realpath >> "$BASE/trace"
-cat "$BASE/trace"
+cat "$BASE/rawtrace" | xargs -n1 realpath
+cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
 
 # delete all unused filesf
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
@@ -68,5 +68,6 @@ rm -rf "$BASE/build/firmware.ino.hex"
 # compress the compiler
 #tar -zcvf "$BASE/../compiler.tar.gz" "$BASE"
 
+ls
 # restore dir
 cd "$ROOT"
