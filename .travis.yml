@@ -3,6 +3,9 @@ node_js:
   - '9.2.0'
 sudo: false
 dist: trusty
+install:
+  - apt-get update
+  - apt-get install xorriso
 script:
   - sh setup.sh
 branches:
