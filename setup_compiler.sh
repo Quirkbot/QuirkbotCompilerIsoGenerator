@@ -68,7 +68,7 @@ echo "#########################################################################"
 echo "discovering all used files"
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
 cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
-cat "$BASE/trace"
+#cat "$BASE/trace"
 
 # delete all unused filesf
 echo "#########################################################################"
@@ -76,13 +76,15 @@ echo "deleting unused files"
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
 cat "$BASE/remove.txt"
 xargs rm -rf < "$BASE/remove.txt"
-find "$BASE" -type d -empty -delete
-#rm -rf "$BASE/build/sketch/firmare.ino.cpp"
-#rm -rf "$BASE/build/sketch/firmare.ino.cpp.d"
-#rm -rf "$BASE/build/sketch/firmare.ino.cpp.o"
-#rm -rf "$BASE/build/firmware.ino.elf"
-#rm -rf "$BASE/build/firmware.ino.hex"
+#find "$BASE" -type d -empty -delete
+rm -rf "$BASE/build/sketch/firmare.ino.cpp"
+rm -rf "$BASE/build/sketch/firmare.ino.cpp.d"
+rm -rf "$BASE/build/sketch/firmare.ino.cpp.o"
+rm -rf "$BASE/build/firmware.ino.elf"
+rm -rf "$BASE/build/firmware.ino.hex"
+echo "ls $BASE"
 ls "$BASE"
+echo "ls $BASE/build"
 ls "$BASE/build"
 
 # compress the compiler
