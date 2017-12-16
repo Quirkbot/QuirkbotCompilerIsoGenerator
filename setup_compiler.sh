@@ -68,7 +68,7 @@ echo "#########################################################################"
 echo "discovering all used files"
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
 cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
-#cat "$BASE/trace"
+cat "$BASE/trace"
 
 # delete all unused filesf
 echo "#########################################################################"
