@@ -18,7 +18,7 @@ cp -R "$ROOT/compiler" "$TMP/boot/core/home/compiler"
 
 # pack the core
 echo "packing the core"
-find "$TMP/boot/core" | cpio -H newc -o | gzip > ../core.gz
+find "$TMP/boot/core" | cpio -H newc -o | gzip > "$TMP/boot/core.gz"
 
 # cleanup
 echo "final cleanup"

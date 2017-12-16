@@ -46,6 +46,16 @@ cat "$BASE/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$BASE/build.sh
 # capture the "link and copy" part
 cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$BASE/build.sh"
 
+# make build.sh relative
+echo "final build.sh"
+sed -i "" "s|$BASE/||g" "$BASE/build.sh"
+cat "$BASE/build.sh"
+
+# do test build
+echo "doing test build"
+time sh "$BASE/build.sh"
+ls "$BASE/build"
+
 # tracefile all the used files
 echo "discovering all used files"
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
