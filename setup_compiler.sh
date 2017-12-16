@@ -71,6 +71,8 @@ rm -rf "$BASE/sketch/firmare.ino.cpp.d"
 rm -rf "$BASE/sketch/firmare.ino.cpp.o"
 rm -rf "$BASE/build/firmware.ino.elf"
 rm -rf "$BASE/build/firmware.ino.hex"
+ls "$BASE"
+ls "$BASE/build"
 
 # compress the compiler
 #tar -zcvf "$BASE/../compiler.tar.gz" "$BASE"
