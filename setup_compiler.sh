@@ -48,7 +48,7 @@ cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> 
 
 # make build.sh relative
 echo "final build.sh"
-sed -i "" "s|$BASE/||g" "$BASE/build.sh"
+sed -i "s|$BASE/||g" "$BASE/build.sh"
 cat "$BASE/build.sh"
 
 # do test build
