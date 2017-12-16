@@ -6,10 +6,9 @@ dist: trusty
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install xorriso
-  - sudo apt-get install coreutils
   - sudo apt-get install realpath
 script:
-  - sh setup.sh
+  - sudo sh setup.sh
 branches:
   only:
     - develop
