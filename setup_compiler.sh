@@ -71,7 +71,6 @@ ls "$BASE/build"
 echo "#########################################################################"
 echo "deleting unused files"
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
-cat "$BASE/remove.txt"
 xargs rm -rf < "$BASE/remove.txt"
 find "$BASE" -type d -empty -delete
 rm -rf "$BASE/build/sketch/firmare.ino.cpp"
