@@ -52,6 +52,9 @@ cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> 
 
 # tracefile all the used files
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
+realpath "/home/travis/build/Quirkbot/QuirkbotCompilerIsoGenerator/compiler/package.json"
+realpath "/home/travis/build/Quirkbot/../../"
+
 cat "$BASE/rawtrace" | xargs -n1 echo | xargs realpath
 cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
 
