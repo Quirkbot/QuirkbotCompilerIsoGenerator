@@ -57,11 +57,6 @@ echo "final build.sh"
 sed -i "s|$BASE/||g" "$BASE/build.sh"
 cat "$BASE/build.sh"
 
-# do test build
-echo "#########################################################################"
-echo "doing test build"
-time sh "$BASE/build.sh"
-ls "$BASE/build"
 
 # tracefile all the used files
 echo "#########################################################################"
@@ -69,6 +64,12 @@ echo "discovering all used files"
 perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
 cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
 cat "$BASE/trace"
+
+# do test build
+echo "#########################################################################"
+echo "doing test build"
+time sh "$BASE/build.sh"
+ls "$BASE/build"
 
 # delete all unused filesf
 echo "#########################################################################"
