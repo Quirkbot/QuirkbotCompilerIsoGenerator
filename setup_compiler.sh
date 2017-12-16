@@ -82,7 +82,7 @@ rm -rf "$BASE/build/firmware.ino.hex"
 # update the home path to the location within the new image
 echo "#########################################################################"
 echo "updating home path"
-sed -i "s|$ROOT|/home|g" "$BASE/*"
+sed -i "s|$ROOT|/home|g" *
 cat "$BASE/build.sh"
 
 # compress the compiler
