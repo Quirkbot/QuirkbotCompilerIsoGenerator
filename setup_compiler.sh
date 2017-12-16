@@ -11,12 +11,8 @@ BASE=$(pwd)
 # install dependencies
 echo "installing dependencies"
 #tce-load -wi node strace perl5 curl
-
-#rm -rf "$BASE/node_modules"
-npm install quirkbot-arduino-builder@0.0.5
-npm install quirkbot-arduino-hardware@0.4.9
-npm install quirkbot-arduino-library@2.5.7
-npm install quirkbot-avr-gcc@1.0.1
+#npm install
+mv "$ROOT/node_modules" "$BASE/node_modules"
 
 # create temp dir and setup files
 echo "creating directories"

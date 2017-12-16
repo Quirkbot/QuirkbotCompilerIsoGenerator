@@ -1,0 +1,11 @@
+{
+  "name": "quirkbotcompilerisogenerator",
+  "version": "1.0.0",
+  "dependencies" : {
+    "quirkbot-arduino-builder" : "0.0.5",
+    "quirkbot-arduino-hardware" : "0.4.9",
+    "quirkbot-arduino-library" : "2.5.7",
+    "quirkbot-avr-gcc" : "1.0.1"
+  },
+  "license": "ISC"
+}
