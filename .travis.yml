@@ -6,6 +6,7 @@ dist: trusty
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install xorriso
+  - sudo apt-get install coreutils
 script:
   - sh setup.sh
 branches:
