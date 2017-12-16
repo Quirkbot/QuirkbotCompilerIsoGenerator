@@ -51,10 +51,6 @@ cat "$BASE/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$BASE/build.sh
 # capture the "link and copy" part
 cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$BASE/build.sh"
 
-# make build.sh relative
-echo "#########################################################################"
-echo "final build.sh"
-#sed -i "s|$BASE/||g" "$BASE/build.sh"
 cat "$BASE/build.sh"
 
 
@@ -77,16 +73,18 @@ echo "deleting unused files"
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
 cat "$BASE/remove.txt"
 xargs rm -rf < "$BASE/remove.txt"
-#find "$BASE" -type d -empty -delete
+find "$BASE" -type d -empty -delete
 rm -rf "$BASE/build/sketch/firmare.ino.cpp"
 rm -rf "$BASE/build/sketch/firmare.ino.cpp.d"
 rm -rf "$BASE/build/sketch/firmare.ino.cpp.o"
 rm -rf "$BASE/build/firmware.ino.elf"
 rm -rf "$BASE/build/firmware.ino.hex"
-echo "ls $BASE"
-ls "$BASE"
-echo "ls $BASE/build"
-ls "$BASE/build"
+
+# update the home path to the location within the new image
+echo "#########################################################################"
+echo "updating home path"
+sed -i "s|$ROOT||g" "/home"
+cat "$BASE/build.sh"
 
 # compress the compiler
 #tar -zcvf "$BASE/../compiler.tar.gz" "$BASE"
