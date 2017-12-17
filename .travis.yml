@@ -1,12 +1,13 @@
 language: node_js
 node_js:
   - '9.2.0'
-sudo: true
+sudo: false
 dist: trusty
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install xorriso
   - sudo apt-get install realpath
+  - sudo apt-get install tree
 script:
   - sudo sh setup.sh
 branches:
