@@ -32,9 +32,10 @@ rm -rf "$TMP/boot/core"
 # build iso
 echo "#########################################################################"
 echo "building iso"
+tree "$TMP"
 xorriso -as mkisofs -iso-level 3 -full-iso9660-filenames -volid ISOIMAGE \
-        -eltorito-boot "$BASE/boot/isolinux/isolinux.bin" -boot-load-size 4 \
-        -eltorito-catalog "$BASE/boot/isolinux/boot.cat" -boot-info-table \
+        -eltorito-boot "$TMP/boot/isolinux/isolinux.bin" -boot-load-size 4 \
+        -eltorito-catalog "$TMP/boot/isolinux/boot.cat" -boot-info-table \
         -no-emul-boot -output "$ROOT/image.iso" "$TMP"
 
 # restore dir
