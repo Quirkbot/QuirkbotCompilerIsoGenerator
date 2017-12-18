@@ -6,7 +6,7 @@ dist: trusty
 services:
   - docker
 script:
-  - "docker run -i -v \"${PWD}:/transfer\"  daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 sudo pwd && ls\""
+  - "docker run -i -v \"${PWD}:/transfer\"  daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 sudo ls /transfer\""
 
 branches:
   only:
