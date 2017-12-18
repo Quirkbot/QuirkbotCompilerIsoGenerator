@@ -7,13 +7,7 @@ services:
   - docker
 script:
   - "docker run -i -v \"${PWD}:/docker\"  daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 /docker/steup.sh\""
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install xorriso
-  - sudo apt-get install realpath
-  - sudo apt-get install tree
-script:
-- sudo bash setup.sh
+
 branches:
   only:
   - master
