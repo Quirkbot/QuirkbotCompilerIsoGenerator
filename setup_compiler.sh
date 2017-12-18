@@ -75,6 +75,7 @@ xargs rm -rf < "$BASE/remove.txt"
 find "$BASE" -type d -empty -delete
 rm -rf "$BASE/build/firmware.ino.elf"
 rm -rf "$BASE/build/firmware.ino.hex"
+tree $BASE
 
 # update the home path to the location within the new image
 echo "#########################################################################"
