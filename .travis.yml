@@ -16,28 +16,27 @@ branches:
   - develop
 deploy:
   matrix:
-    matrix:
-    - provider: s3
-      access_key_id:
-        secure: B2/4kkwE/pDPfx/QxjgKdwZ2n3f6SrJGFqyMAaSwrdwr/AMhWQyuRGMcHnZUwwB2gWz2HfG75uD5xT/wCuzH9kztclyB4zCpSjByWLGTA4o4MAZcUO+mW4kNgRjODDoJnsFuMCoICwLQ7eyudoha5GCzMTtrIvGMr/AtiEjui2yoC13lVFD4ORJZJ0qPRxV1teTaq+SztVxmh+1waPOZL3ts97FhuwIhY4CnrjO1A0yS3Hw+jY+jEj2jXW/1m1ZVJm7i2wC5zJ7pwm2UXD0+nqz6aWjUjH1tThVGidiNCNLNCtOrw/xCjSohUUFtD38FcxfUr+49AIFUIeG5/wzvFCjC3PQaZsAT0nGOHgnlDUBCU6gXX8z/WhuAyn9e3yfWH1wY5rgf/Hz9fi//ua3iDmzOU3LPmX64O1Szp43if5IXLiRWKcoPXcTdPfSRQOLWjCWqDJRPdUYRI/6D+0bGWGluzvwd6W3cvyPvG98bZNHwtWdgmxqVpw9CqLmktjGoWUd+V2qA5Xzuj01Rsh5uPyhzNiUc4sWMbU3itbbJ+2fFw7kvfLQCcSqdYPhP+UwIwATlEtsR9VdJn4MXbRU4i+1RZRP/uaUGs9NuFJEF+FsL43/m1GbbYKjTWX+qxQg+4Xk9EXSu2UnOG/TkybVH+lHdyL8sVpOLYjLcSfliL9Y=
-      secret_access_key:
-        secure: HTBpMVabJkXvs6nwwwqguLxYwzwQRYj1tLXwcs85UwLl+fdYsY5o7uFVXh1uAvmik//9APyon4n7/CCttf/99yP8/w0nDslnTI6ENQtCVMTeNQSseIWXmhC4ey1e2pWkmuLDbnsOF+mqNpjppgEcvmsg8hoBjhCwWeS64qf0Wo+6fVn17OwnQwZ+MBtp9Ax35e+4nkEUMwmrRAlODuCJ81erJr/eKMtaYVTYPMkRxDvGqpX82eQsAzwR+hdRmV/U7J0G8HbSL7acM8fvXd+UCKblOGV5CbFvdopwdf6X993fJNUXF8usKB3GM4NsSql52DoEXMLvCAI3/Sq3N3OwP/p7cMczYRt/BXX8/kcoD0jmrJoqMWbykDQeThRd8JI+NWY9oSY5dv1lxN7lIJv4g9FxUCtRZW2bpuhbAyklt+6aCOtVjhMyqAJXfQXXMedo7si0E3jvKAOrk9EN6FYLvlblduib/B94H7pdYcWOco6I9HTECQs7nPpYJny4RIQ959tghNt2S4Twhm1ubyXC6Cc7tFgNnwx/6lfYuE5JiMVGMwcNpqQMB76lyg4LcDZhAAj4d0yYnKa5XHstZT2wnomUCV0ty+YDmlrXlKeZYTAx5rbTadlJ+qEBBA5nQbPU3bzmi1OsD9UnBG4QDtcmVcp7vPrFtq1HM5XxsTYC+Lw=
-      bucket: quirkbot-downloads-production
-      region: us-east-1
-      local_dir: build
-      upload-dir: quirkbot-compiler
-      skip_cleanup: true
-      on:
-        branch: master
-    - provider: s3
-      access_key_id:
-        secure: B2/4kkwE/pDPfx/QxjgKdwZ2n3f6SrJGFqyMAaSwrdwr/AMhWQyuRGMcHnZUwwB2gWz2HfG75uD5xT/wCuzH9kztclyB4zCpSjByWLGTA4o4MAZcUO+mW4kNgRjODDoJnsFuMCoICwLQ7eyudoha5GCzMTtrIvGMr/AtiEjui2yoC13lVFD4ORJZJ0qPRxV1teTaq+SztVxmh+1waPOZL3ts97FhuwIhY4CnrjO1A0yS3Hw+jY+jEj2jXW/1m1ZVJm7i2wC5zJ7pwm2UXD0+nqz6aWjUjH1tThVGidiNCNLNCtOrw/xCjSohUUFtD38FcxfUr+49AIFUIeG5/wzvFCjC3PQaZsAT0nGOHgnlDUBCU6gXX8z/WhuAyn9e3yfWH1wY5rgf/Hz9fi//ua3iDmzOU3LPmX64O1Szp43if5IXLiRWKcoPXcTdPfSRQOLWjCWqDJRPdUYRI/6D+0bGWGluzvwd6W3cvyPvG98bZNHwtWdgmxqVpw9CqLmktjGoWUd+V2qA5Xzuj01Rsh5uPyhzNiUc4sWMbU3itbbJ+2fFw7kvfLQCcSqdYPhP+UwIwATlEtsR9VdJn4MXbRU4i+1RZRP/uaUGs9NuFJEF+FsL43/m1GbbYKjTWX+qxQg+4Xk9EXSu2UnOG/TkybVH+lHdyL8sVpOLYjLcSfliL9Y=
-      secret_access_key:
-        secure: HTBpMVabJkXvs6nwwwqguLxYwzwQRYj1tLXwcs85UwLl+fdYsY5o7uFVXh1uAvmik//9APyon4n7/CCttf/99yP8/w0nDslnTI6ENQtCVMTeNQSseIWXmhC4ey1e2pWkmuLDbnsOF+mqNpjppgEcvmsg8hoBjhCwWeS64qf0Wo+6fVn17OwnQwZ+MBtp9Ax35e+4nkEUMwmrRAlODuCJ81erJr/eKMtaYVTYPMkRxDvGqpX82eQsAzwR+hdRmV/U7J0G8HbSL7acM8fvXd+UCKblOGV5CbFvdopwdf6X993fJNUXF8usKB3GM4NsSql52DoEXMLvCAI3/Sq3N3OwP/p7cMczYRt/BXX8/kcoD0jmrJoqMWbykDQeThRd8JI+NWY9oSY5dv1lxN7lIJv4g9FxUCtRZW2bpuhbAyklt+6aCOtVjhMyqAJXfQXXMedo7si0E3jvKAOrk9EN6FYLvlblduib/B94H7pdYcWOco6I9HTECQs7nPpYJny4RIQ959tghNt2S4Twhm1ubyXC6Cc7tFgNnwx/6lfYuE5JiMVGMwcNpqQMB76lyg4LcDZhAAj4d0yYnKa5XHstZT2wnomUCV0ty+YDmlrXlKeZYTAx5rbTadlJ+qEBBA5nQbPU3bzmi1OsD9UnBG4QDtcmVcp7vPrFtq1HM5XxsTYC+Lw=
-      bucket: quirkbot-downloads-stage
-      region: us-east-1
-      local_dir: build
-      upload-dir: quirkbot-compiler
-      skip_cleanup: true
-      on:
-        branch: develop
+  - provider: s3
+    access_key_id:
+      secure: B2/4kkwE/pDPfx/QxjgKdwZ2n3f6SrJGFqyMAaSwrdwr/AMhWQyuRGMcHnZUwwB2gWz2HfG75uD5xT/wCuzH9kztclyB4zCpSjByWLGTA4o4MAZcUO+mW4kNgRjODDoJnsFuMCoICwLQ7eyudoha5GCzMTtrIvGMr/AtiEjui2yoC13lVFD4ORJZJ0qPRxV1teTaq+SztVxmh+1waPOZL3ts97FhuwIhY4CnrjO1A0yS3Hw+jY+jEj2jXW/1m1ZVJm7i2wC5zJ7pwm2UXD0+nqz6aWjUjH1tThVGidiNCNLNCtOrw/xCjSohUUFtD38FcxfUr+49AIFUIeG5/wzvFCjC3PQaZsAT0nGOHgnlDUBCU6gXX8z/WhuAyn9e3yfWH1wY5rgf/Hz9fi//ua3iDmzOU3LPmX64O1Szp43if5IXLiRWKcoPXcTdPfSRQOLWjCWqDJRPdUYRI/6D+0bGWGluzvwd6W3cvyPvG98bZNHwtWdgmxqVpw9CqLmktjGoWUd+V2qA5Xzuj01Rsh5uPyhzNiUc4sWMbU3itbbJ+2fFw7kvfLQCcSqdYPhP+UwIwATlEtsR9VdJn4MXbRU4i+1RZRP/uaUGs9NuFJEF+FsL43/m1GbbYKjTWX+qxQg+4Xk9EXSu2UnOG/TkybVH+lHdyL8sVpOLYjLcSfliL9Y=
+    secret_access_key:
+      secure: HTBpMVabJkXvs6nwwwqguLxYwzwQRYj1tLXwcs85UwLl+fdYsY5o7uFVXh1uAvmik//9APyon4n7/CCttf/99yP8/w0nDslnTI6ENQtCVMTeNQSseIWXmhC4ey1e2pWkmuLDbnsOF+mqNpjppgEcvmsg8hoBjhCwWeS64qf0Wo+6fVn17OwnQwZ+MBtp9Ax35e+4nkEUMwmrRAlODuCJ81erJr/eKMtaYVTYPMkRxDvGqpX82eQsAzwR+hdRmV/U7J0G8HbSL7acM8fvXd+UCKblOGV5CbFvdopwdf6X993fJNUXF8usKB3GM4NsSql52DoEXMLvCAI3/Sq3N3OwP/p7cMczYRt/BXX8/kcoD0jmrJoqMWbykDQeThRd8JI+NWY9oSY5dv1lxN7lIJv4g9FxUCtRZW2bpuhbAyklt+6aCOtVjhMyqAJXfQXXMedo7si0E3jvKAOrk9EN6FYLvlblduib/B94H7pdYcWOco6I9HTECQs7nPpYJny4RIQ959tghNt2S4Twhm1ubyXC6Cc7tFgNnwx/6lfYuE5JiMVGMwcNpqQMB76lyg4LcDZhAAj4d0yYnKa5XHstZT2wnomUCV0ty+YDmlrXlKeZYTAx5rbTadlJ+qEBBA5nQbPU3bzmi1OsD9UnBG4QDtcmVcp7vPrFtq1HM5XxsTYC+Lw=
+    bucket: quirkbot-downloads-production
+    region: us-east-1
+    local_dir: build
+    upload-dir: quirkbot-compiler
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: s3
+    access_key_id:
+      secure: B2/4kkwE/pDPfx/QxjgKdwZ2n3f6SrJGFqyMAaSwrdwr/AMhWQyuRGMcHnZUwwB2gWz2HfG75uD5xT/wCuzH9kztclyB4zCpSjByWLGTA4o4MAZcUO+mW4kNgRjODDoJnsFuMCoICwLQ7eyudoha5GCzMTtrIvGMr/AtiEjui2yoC13lVFD4ORJZJ0qPRxV1teTaq+SztVxmh+1waPOZL3ts97FhuwIhY4CnrjO1A0yS3Hw+jY+jEj2jXW/1m1ZVJm7i2wC5zJ7pwm2UXD0+nqz6aWjUjH1tThVGidiNCNLNCtOrw/xCjSohUUFtD38FcxfUr+49AIFUIeG5/wzvFCjC3PQaZsAT0nGOHgnlDUBCU6gXX8z/WhuAyn9e3yfWH1wY5rgf/Hz9fi//ua3iDmzOU3LPmX64O1Szp43if5IXLiRWKcoPXcTdPfSRQOLWjCWqDJRPdUYRI/6D+0bGWGluzvwd6W3cvyPvG98bZNHwtWdgmxqVpw9CqLmktjGoWUd+V2qA5Xzuj01Rsh5uPyhzNiUc4sWMbU3itbbJ+2fFw7kvfLQCcSqdYPhP+UwIwATlEtsR9VdJn4MXbRU4i+1RZRP/uaUGs9NuFJEF+FsL43/m1GbbYKjTWX+qxQg+4Xk9EXSu2UnOG/TkybVH+lHdyL8sVpOLYjLcSfliL9Y=
+    secret_access_key:
+      secure: HTBpMVabJkXvs6nwwwqguLxYwzwQRYj1tLXwcs85UwLl+fdYsY5o7uFVXh1uAvmik//9APyon4n7/CCttf/99yP8/w0nDslnTI6ENQtCVMTeNQSseIWXmhC4ey1e2pWkmuLDbnsOF+mqNpjppgEcvmsg8hoBjhCwWeS64qf0Wo+6fVn17OwnQwZ+MBtp9Ax35e+4nkEUMwmrRAlODuCJ81erJr/eKMtaYVTYPMkRxDvGqpX82eQsAzwR+hdRmV/U7J0G8HbSL7acM8fvXd+UCKblOGV5CbFvdopwdf6X993fJNUXF8usKB3GM4NsSql52DoEXMLvCAI3/Sq3N3OwP/p7cMczYRt/BXX8/kcoD0jmrJoqMWbykDQeThRd8JI+NWY9oSY5dv1lxN7lIJv4g9FxUCtRZW2bpuhbAyklt+6aCOtVjhMyqAJXfQXXMedo7si0E3jvKAOrk9EN6FYLvlblduib/B94H7pdYcWOco6I9HTECQs7nPpYJny4RIQ959tghNt2S4Twhm1ubyXC6Cc7tFgNnwx/6lfYuE5JiMVGMwcNpqQMB76lyg4LcDZhAAj4d0yYnKa5XHstZT2wnomUCV0ty+YDmlrXlKeZYTAx5rbTadlJ+qEBBA5nQbPU3bzmi1OsD9UnBG4QDtcmVcp7vPrFtq1HM5XxsTYC+Lw=
+    bucket: quirkbot-downloads-stage
+    region: us-east-1
+    local_dir: build
+    upload-dir: quirkbot-compiler
+    skip_cleanup: true
+    on:
+      branch: develop
