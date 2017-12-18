@@ -11,7 +11,7 @@ trap cleanup EXIT
 
 # default config
 URL="http://distro.ibiblio.org/tinycorelinux/8.x/x86_64"
-INPUTISO="Core-current.iso"
+INPUTISO="CorePure64-current.iso"
 OUTPUTISO="tinycore-custom.iso"
 ROOTFS="rootfs"
 VOLUMEID="TINYCORECUSTOM"
