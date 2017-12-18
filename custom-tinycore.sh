@@ -80,9 +80,11 @@ fi
 
 
 # build a new iso
+rm -rf build
+mkdir build
 xorriso -as mkisofs -iso-level 3 -full-iso9660-filenames -volid "${VOLUMEID}" \
         -eltorito-boot boot/isolinux/isolinux.bin -boot-load-size 4 \
         -eltorito-catalog boot/isolinux/boot.cat -boot-info-table \
-        -no-emul-boot -output "${OUTPUTISO}" "${TMPDIR}/"
+        -no-emul-boot -output "build/${OUTPUTISO}" "${TMPDIR}/"
 
 ls -lh
