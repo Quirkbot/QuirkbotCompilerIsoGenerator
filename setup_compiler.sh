@@ -80,7 +80,7 @@ tree $BASE
 # update the home path to the location within the new image
 echo "#########################################################################"
 echo "updating home path"
-sed -i "s|$ROOT||g" "$BASE/build.sh"
+sed -i "s|$ROOT|/home/tc|g" "$BASE/build.sh"
 cat "$BASE/build.sh"
 
 # compress the compiler
@@ -88,8 +88,8 @@ cat "$BASE/build.sh"
 
 # move into rootfs so we can prepare it for the image
 rm -rf "$ROOT/rootfs"
-mkdir "$ROOT/rootfs"
-mv "$BASE" "$ROOT/rootfs"
+mkdir -p "$ROOT/rootfs/tc"
+mv "$BASE" "$ROOT/rootfs/tc"
 
 # restore dir
 cd "$ROOT"
