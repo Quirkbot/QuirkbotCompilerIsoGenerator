@@ -85,7 +85,7 @@ echo "updating home path"
 cd "$BASE/build"
 sed -i "s|$ROOT|/|g" *
 cd "$BASE"
-sed -i "s|$ROOT|/|g" "$BASE/build.sh"
+sed -i "s|$ROOT||g" "$BASE/build.sh"
 cat "$BASE/build.sh"
 
 # compress the compiler
