@@ -89,6 +89,7 @@ cat "$BASE/build.sh"
 # move into rootfs so we can prepare it for the image
 rm -rf "$ROOT/rootfs/compiler"
 mv "$BASE" "$ROOT/rootfs"
+chmod -R 777 "$ROOT/rootfs"
 
 # restore dir
 cd "$ROOT"
