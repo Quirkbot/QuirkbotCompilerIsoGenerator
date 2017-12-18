@@ -1,8 +1,7 @@
 #!/bin/sh
 echo "ready"
 
-cd /home/tc
-
+sudo su
 while true
 do
 	read IN < /dev/ttyS0
