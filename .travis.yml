@@ -6,7 +6,7 @@ dist: trusty
 services:
   - docker
 script:
-  - "docker run -i -v \"${PWD}:/docker\"  daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 /docker/steup.sh\""
+  - "docker run -i -v \"${PWD}:/docker\"  daald/ubuntu32:trusty /bin/bash -c \"linux32 --32bit i386 /docker/setup.sh\""
 
 branches:
   only:
