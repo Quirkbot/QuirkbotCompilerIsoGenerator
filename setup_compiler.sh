@@ -73,18 +73,12 @@ echo "deleting unused files"
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
 xargs rm -rf < "$BASE/remove.txt"
 find "$BASE" -type d -empty -delete
-rm -rf "$BASE/build/sketch/firmare.ino.cpp"
-rm -rf "$BASE/build/sketch/firmare.ino.cpp.d"
-rm -rf "$BASE/build/sketch/firmare.ino.cpp.o"
 rm -rf "$BASE/build/firmware.ino.elf"
 rm -rf "$BASE/build/firmware.ino.hex"
 
 # update the home path to the location within the new image
 echo "#########################################################################"
 echo "updating home path"
-cd "$BASE/build"
-sed -i "s|$ROOT|/|g" *
-cd "$BASE"
 sed -i "s|$ROOT||g" "$BASE/build.sh"
 cat "$BASE/build.sh"
 
