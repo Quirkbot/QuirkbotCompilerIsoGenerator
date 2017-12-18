@@ -1,3 +1,6 @@
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+cd $SCRIPTPATH
+
 sudo apt-get -qq update
 sudo apt-get --yes --force-yes install xorriso
 sudo apt-get --yes --force-yes install realpath
