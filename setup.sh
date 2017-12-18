@@ -6,6 +6,7 @@ sudo apt-get --yes --force-yes install xorriso
 sudo apt-get --yes --force-yes install realpath
 sudo apt-get --yes --force-yes install tree
 sudo apt-get --yes --force-yes install curl
+sudo apt-get --yes --force-yes install strace
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 export NVM_DIR="/root/.nvm"
