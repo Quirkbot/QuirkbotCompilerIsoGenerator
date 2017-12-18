@@ -57,9 +57,9 @@ cat "$BASE/build.sh"
 # tracefile all the used files
 echo "#########################################################################"
 echo "discovering all used files"
-#perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
-#cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
-#cat "$BASE/trace"
+perl "$ROOT/tracefile.perl" -uef sh "$BASE/build.sh" | grep $BASE >> "$BASE/rawtrace"
+cat "$BASE/rawtrace" | xargs -n1 realpath >> "$BASE/trace"
+cat "$BASE/trace"
 
 # do test build
 echo "#########################################################################"
@@ -71,7 +71,7 @@ ls "$BASE/build"
 echo "#########################################################################"
 echo "deleting unused files"
 find "$BASE" -type f | grep -vFf "$BASE/trace" >> "$BASE/remove.txt"
-#xargs rm -rf < "$BASE/remove.txt"
+xargs rm -rf < "$BASE/remove.txt"
 find "$BASE" -type d -empty -delete
 rm -rf "$BASE/build/sketch/firmare.ino.cpp"
 rm -rf "$BASE/build/sketch/firmare.ino.cpp.d"
