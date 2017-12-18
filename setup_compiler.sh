@@ -80,7 +80,7 @@ tree $BASE
 # update the home path to the location within the new image
 echo "#########################################################################"
 echo "updating home path"
-sed -i "s|$ROOT||g" *
+grep -rl "$ROOT" "$BASE"/ | xargs sed -i "s|$ROOT||g"
 cat "$BASE/build.sh"
 
 # compress the compiler
