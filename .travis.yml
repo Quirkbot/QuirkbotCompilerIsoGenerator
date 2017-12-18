@@ -15,8 +15,8 @@ branches:
   - master
   - develop
 deploy:
-  matrix:
-  - provider: s3
+  -
+    provider: s3
     access_key_id:
       secure: B2/4kkwE/pDPfx/QxjgKdwZ2n3f6SrJGFqyMAaSwrdwr/AMhWQyuRGMcHnZUwwB2gWz2HfG75uD5xT/wCuzH9kztclyB4zCpSjByWLGTA4o4MAZcUO+mW4kNgRjODDoJnsFuMCoICwLQ7eyudoha5GCzMTtrIvGMr/AtiEjui2yoC13lVFD4ORJZJ0qPRxV1teTaq+SztVxmh+1waPOZL3ts97FhuwIhY4CnrjO1A0yS3Hw+jY+jEj2jXW/1m1ZVJm7i2wC5zJ7pwm2UXD0+nqz6aWjUjH1tThVGidiNCNLNCtOrw/xCjSohUUFtD38FcxfUr+49AIFUIeG5/wzvFCjC3PQaZsAT0nGOHgnlDUBCU6gXX8z/WhuAyn9e3yfWH1wY5rgf/Hz9fi//ua3iDmzOU3LPmX64O1Szp43if5IXLiRWKcoPXcTdPfSRQOLWjCWqDJRPdUYRI/6D+0bGWGluzvwd6W3cvyPvG98bZNHwtWdgmxqVpw9CqLmktjGoWUd+V2qA5Xzuj01Rsh5uPyhzNiUc4sWMbU3itbbJ+2fFw7kvfLQCcSqdYPhP+UwIwATlEtsR9VdJn4MXbRU4i+1RZRP/uaUGs9NuFJEF+FsL43/m1GbbYKjTWX+qxQg+4Xk9EXSu2UnOG/TkybVH+lHdyL8sVpOLYjLcSfliL9Y=
     secret_access_key:
@@ -28,7 +28,8 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
-  - provider: s3
+  -
+    provider: s3
     access_key_id:
       secure: B2/4kkwE/pDPfx/QxjgKdwZ2n3f6SrJGFqyMAaSwrdwr/AMhWQyuRGMcHnZUwwB2gWz2HfG75uD5xT/wCuzH9kztclyB4zCpSjByWLGTA4o4MAZcUO+mW4kNgRjODDoJnsFuMCoICwLQ7eyudoha5GCzMTtrIvGMr/AtiEjui2yoC13lVFD4ORJZJ0qPRxV1teTaq+SztVxmh+1waPOZL3ts97FhuwIhY4CnrjO1A0yS3Hw+jY+jEj2jXW/1m1ZVJm7i2wC5zJ7pwm2UXD0+nqz6aWjUjH1tThVGidiNCNLNCtOrw/xCjSohUUFtD38FcxfUr+49AIFUIeG5/wzvFCjC3PQaZsAT0nGOHgnlDUBCU6gXX8z/WhuAyn9e3yfWH1wY5rgf/Hz9fi//ua3iDmzOU3LPmX64O1Szp43if5IXLiRWKcoPXcTdPfSRQOLWjCWqDJRPdUYRI/6D+0bGWGluzvwd6W3cvyPvG98bZNHwtWdgmxqVpw9CqLmktjGoWUd+V2qA5Xzuj01Rsh5uPyhzNiUc4sWMbU3itbbJ+2fFw7kvfLQCcSqdYPhP+UwIwATlEtsR9VdJn4MXbRU4i+1RZRP/uaUGs9NuFJEF+FsL43/m1GbbYKjTWX+qxQg+4Xk9EXSu2UnOG/TkybVH+lHdyL8sVpOLYjLcSfliL9Y=
     secret_access_key:
