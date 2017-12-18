@@ -88,8 +88,8 @@ cat "$BASE/build.sh"
 
 # move into rootfs so we can prepare it for the image
 rm -rf "$ROOT/rootfs"
-mkdir -p "$ROOT/rootfs/tc"
-mv "$BASE" "$ROOT/rootfs/tc"
+mkdir -p "$ROOT/rootfs/home/tc"
+mv "$BASE" "$ROOT/rootfs/home/tc"
 
 # restore dir
 cd "$ROOT"
