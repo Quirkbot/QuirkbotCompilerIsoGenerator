@@ -2,6 +2,7 @@ sudo apt-get -qq update
 sudo apt-get --yes --force-yes install xorriso
 sudo apt-get --yes --force-yes install realpath
 sudo apt-get --yes --force-yes install tree
+sudo apt-get --yes --force-yes install curl
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 nvm install 9.2.0
