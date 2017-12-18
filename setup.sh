@@ -1,2 +1,2 @@
-sh setup_compiler.sh
-sh custom-tinycore.sh
+bash setup_compiler.sh
+bash custom-tinycore.sh

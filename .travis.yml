@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get install realpath
   - sudo apt-get install tree
 script:
-  - sudo sh setup.sh
+  - sudo bash setup.sh
 branches:
   only:
     - develop
