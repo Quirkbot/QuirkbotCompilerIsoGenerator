@@ -13,7 +13,7 @@ trap cleanup EXIT
 URL="http://distro.ibiblio.org/tinycorelinux/8.x/x86"
 INPUTISO="Core-current.iso"
 OUTPUTISO="tinycore-custom.iso"
-ROOTFS="compiler"
+ROOTFS="rootfs"
 VOLUMEID="TINYCORECUSTOM"
 EXTENSIONS=""
 BOOTARGS=""

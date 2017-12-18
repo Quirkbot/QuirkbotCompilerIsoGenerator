@@ -91,5 +91,10 @@ cat "$BASE/build.sh"
 # compress the compiler
 #tar -zcvf "$BASE/../compiler.tar.gz" "$BASE"
 
+# move into rootfs so we can prepare it for the image
+rm -rf "$ROOT/rootfs"
+mkdir "$ROOT/rootfs"
+mv "$BASE" "$ROOT/rootfs"
+
 # restore dir
 cd "$ROOT"
