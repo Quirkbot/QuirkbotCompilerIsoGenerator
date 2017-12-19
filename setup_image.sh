@@ -24,7 +24,7 @@ BOOTARGS=""
 
 
 # create our working folders
-TMPDIR="$(mktemp -d --tmpdir=$(pwd) 'iso.XXXXXX')"
+TMPDIR="$(mktemp -d 'iso.XXXXXX')"
 chmod 755 "${TMPDIR}"
 mkdir -p dist/{iso,tcz,dep} "${TMPDIR}/cde/optional"
 
