@@ -78,17 +78,18 @@ rm -rf "$BASE/build/firmware.ino.hex"
 tree $BASE
 
 # update the home path to the location within the new image
-echo "#########################################################################"
-echo "updating home path"
-grep -rl "$ROOT" "$BASE"/ | xargs sed -i "s|$ROOT||g"
-cat "$BASE/build.sh"
+# echo "#########################################################################"
+# echo "updating home path"
+# grep -rl "$ROOT" "$BASE"/ | xargs sed -i "s|$ROOT||g"
+# cat "$BASE/build.sh"
 
 # compress the compiler
 #tar -zcvf "$BASE/../compiler.tar.gz" "$BASE"
 
 # move into rootfs so we can prepare it for the image
-rm -rf "$ROOT/rootfs/compiler"
-mv "$BASE" "$ROOT/rootfs"
+rm -rf "$ROOT/rootfs$ROOT"
+mkdir -p "$ROOT/rootfs$ROOT"
+mv -p "$BASE" "$ROOT/rootfs$ROOT/"
 chmod -R 777 "$ROOT/rootfs"
 
 # restore dir
