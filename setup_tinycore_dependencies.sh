@@ -20,7 +20,7 @@ export PATH=$PATH:$SCRIPTPATH/$NODE_VERSION/bin
 
 # install xorriso
 XORRISO_VERSION="xorriso-1.4.8"
-wget https://www.gnu.org/software/xorriso/$XORRISO_VERSION.tar.gz -O xorriso.tar.gz
+wget https://www.gnu.org/software/xorriso/$XORRISO_VERSION.tar.gz
 tar xvzf $XORRISO_VERSION
 cd $XORRISO_VERSION
 ./configure --prefix=/usr
