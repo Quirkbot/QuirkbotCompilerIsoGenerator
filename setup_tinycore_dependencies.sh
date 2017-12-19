@@ -24,4 +24,8 @@ sudo make install
 cd ..
 
 # npm install
-./$NODE_VERSION/bin/npm install
+./$NODE_VERSION/bin/npm install \
+quirkbot-arduino-builder@0.0.5 \
+quirkbot-arduino-hardware@0.4.9 \
+quirkbot-arduino-library@2.5.7 \
+quirkbot-avr-gcc@1.0.1
