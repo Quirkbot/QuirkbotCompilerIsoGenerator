@@ -12,7 +12,6 @@ make
 sudo make install
 cd ..
 
-
 # install xorriso
 XORRISO_VERSION="xorriso-1.4.8"
 wget https://www.gnu.org/software/xorriso/$XORRISO_VERSION.tar.gz
@@ -24,7 +23,7 @@ sudo make install
 cd ..
 
 # npm install
-./$NODE_VERSION/bin/npm install \
+npm install \
 quirkbot-arduino-builder@0.0.5 \
 quirkbot-arduino-hardware@0.4.9 \
 quirkbot-arduino-library@2.5.7 \
