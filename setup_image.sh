@@ -24,7 +24,7 @@ BOOTARGS=""
 
 
 # create our working folders
-TMPDIR="temp"
+TMPDIR="$(realpath temp)"
 rm -rf "${TMPDIR}"
 mkdir "${TMPDIR}"
 chmod 755 "${TMPDIR}"
