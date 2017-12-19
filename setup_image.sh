@@ -24,9 +24,9 @@ BOOTARGS=""
 
 
 # create our working folders
+rm -rf "temp"
+mkdir "temp"
 TMPDIR="$(realpath temp)"
-rm -rf "${TMPDIR}"
-mkdir "${TMPDIR}"
 chmod 755 "${TMPDIR}"
 mkdir -p dist/{iso,tcz,dep} "${TMPDIR}/cde/optional"
 

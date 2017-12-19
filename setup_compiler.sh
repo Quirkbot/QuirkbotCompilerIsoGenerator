@@ -89,7 +89,7 @@ tree $BASE
 # move into rootfs so we can prepare it for the image
 rm -rf "$ROOT/rootfs$ROOT"
 mkdir -p "$ROOT/rootfs$ROOT"
-mv -p "$BASE" "$ROOT/rootfs$ROOT/"
+mv "$BASE" "$ROOT/rootfs$ROOT/"
 chmod -R 777 "$ROOT/rootfs"
 
 # restore dir
