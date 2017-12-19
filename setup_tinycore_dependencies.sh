@@ -4,7 +4,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTPATH
 
 # install tree
-$TREE_VERSION="tree-1.7.0"
+TREE_VERSION="tree-1.7.0"
 wget http://mama.indstate.edu/users/ice/tree/src/$TREE_VERSION.tgz
 tar zxvf $TREE_VERSION.tgz
 cd $TREE_VERSION
