@@ -1,4 +1,4 @@
-tce-load -wi git strace perl5 curl gcc make compiletc
+tce-load -wi git strace perl5 curl gcc make compiletc bash node
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTPATH
@@ -12,11 +12,6 @@ make
 sudo make install
 cd ..
 
-# install node
-NODE_VERSION="node-v9.3.0-linux-x86"
-wget https://nodejs.org/download/release/latest/$NODE_VERSION.tar.gz
-tar xvzf $NODE_VERSION.tar.gz
-export PATH=$PATH:$SCRIPTPATH/$NODE_VERSION/bin
 
 # install xorriso
 XORRISO_VERSION="xorriso-1.4.8"
@@ -27,3 +22,6 @@ cd $XORRISO_VERSION
 make
 sudo make install
 cd ..
+
+# npm install
+./$NODE_VERSION/bin/npm install
