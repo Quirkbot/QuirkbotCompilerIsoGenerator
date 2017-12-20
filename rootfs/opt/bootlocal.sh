@@ -1,6 +1,8 @@
 #!/bin/sh
 echo "ready"
 sudo su
+echo "test compilation"
+time sh /home/tc/repo/compiler/build.sh
 while true
 do
 	read IN < /dev/ttyS0
