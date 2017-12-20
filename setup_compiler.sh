@@ -27,7 +27,7 @@ echo "#########################################################################"
 echo "creating base firmware"
 echo '#include "Quirkbot.h"
 void setup(){}
-void loop(){}' >> "$BASE/firmware/firmware.ino"
+void loop(){}' > "$BASE/firmware/firmware.ino"
 
 # do a first build and capture the output, so we can extract some info from it
 echo "#########################################################################"
@@ -67,7 +67,7 @@ echo "#########################################################################"
 echo "creating base firmware"
 echo '#include "Quirkbot.h"
 void setup(){}
-void loop(){}' >> "$BASE/build/sketch/firmware.ino.cpp"
+void loop(){}' > "$BASE/build/sketch/firmware.ino.cpp"
 
 # tracefile all the used files
 echo "#########################################################################"
