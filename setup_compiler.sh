@@ -14,7 +14,7 @@ echo "#########################################################################"
 echo "installing dependencies"
 #tce-load -wi node strace perl5 curl
 #npm install
-mv "$ROOT/node_modules" "$BASE/node_modules"
+cp -r "$ROOT/node_modules" "$BASE/node_modules"
 
 # create temp dir and setup files
 echo "#########################################################################"
@@ -52,13 +52,22 @@ cat "$BASE/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$BASE/build.sh
 cp "$BASE/build.sh"  "$BASE/precompile.sh"
 sed -i "" "s|build/sketch/firmware.ino.cpp|node_modules/quirkbot-arduino-library/src/Quirkbot.h|g" "$BASE/precompile.sh"
 sed -i "" "s|Quirkbot.h.o|Quirkbot.h.gch|g" "$BASE/precompile.sh"
+cat "$BASE/precompile.sh"
 sh "$BASE/precompile.sh"
 
 # capture the "link and copy" part
 cat "$BASE/output.txt"| grep "firmware.ino.elf" | grep -v "firmware.ino.eep" >> "$BASE/build.sh"
 
+# final build script
 cat "$BASE/build.sh"
 
+# overwrite the firmware.ino.cpp
+# create the base firmware
+echo "#########################################################################"
+echo "creating base firmware"
+echo '#include "Quirkbot.h"
+void setup(){}
+void loop(){}' >> "$BASE/build/sketch/firmware.ino.cpp"
 
 # tracefile all the used files
 echo "#########################################################################"

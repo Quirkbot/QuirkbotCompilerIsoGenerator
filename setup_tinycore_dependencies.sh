@@ -4,23 +4,31 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTPATH
 
 # install tree
-TREE_VERSION="tree-1.7.0"
-wget http://mama.indstate.edu/users/ice/tree/src/$TREE_VERSION.tgz
-tar zxvf $TREE_VERSION.tgz
-cd $TREE_VERSION
-make
-sudo make install
-cd ..
+if hash tree 2>/dev/null; then
+	echo "tree installed"
+else
+	TREE_VERSION="tree-1.7.0"
+	wget http://mama.indstate.edu/users/ice/tree/src/$TREE_VERSION.tgz
+	tar zxvf $TREE_VERSION.tgz
+	cd $TREE_VERSION
+	make
+	sudo make install
+	cd ..
+fi
 
 # install xorriso
-XORRISO_VERSION="xorriso-1.4.8"
-wget https://www.gnu.org/software/xorriso/$XORRISO_VERSION.tar.gz
-tar xvzf $XORRISO_VERSION.tar.gz
-cd $XORRISO_VERSION
-./configure --prefix=/usr
-make
-sudo make install
-cd ..
+if hash xorriso 2>/dev/null; then
+	echo "xorriso installed"
+else
+	XORRISO_VERSION="xorriso-1.4.8"
+	wget https://www.gnu.org/software/xorriso/$XORRISO_VERSION.tar.gz
+	tar xvzf $XORRISO_VERSION.tar.gz
+	cd $XORRISO_VERSION
+	./configure --prefix=/usr
+	make
+	sudo make install
+	cd ..
+fi
 
 # npm install
 npm install \
