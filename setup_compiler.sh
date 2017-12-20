@@ -50,8 +50,8 @@ cat "$BASE/output.txt"| grep "firmware.ino.cpp.o" | head -n 1 >> "$BASE/build.sh
 
 # precompile the Quirkbot.h header
 cp "$BASE/build.sh"  "$BASE/precompile.sh"
-sed -i "" "s|build/sketch/firmware.ino.cpp|node_modules/quirkbot-arduino-library/src/Quirkbot.h|g" "$BASE/precompile.sh"
-sed -i "" "s|Quirkbot.h.o|Quirkbot.h.gch|g" "$BASE/precompile.sh"
+sed -i "s|build/sketch/firmware.ino.cpp|node_modules/quirkbot-arduino-library/src/Quirkbot.h|g" "$BASE/precompile.sh"
+sed -i "s|Quirkbot.h.o|Quirkbot.h.gch|g" "$BASE/precompile.sh"
 cat "$BASE/precompile.sh"
 sh "$BASE/precompile.sh"
 
