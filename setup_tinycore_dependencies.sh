@@ -1,20 +1,7 @@
-tce-load -wi git strace perl5 curl gcc make compiletc bash node
+tce-load -wi git strace perl5 curl gcc make compiletc bash node tree
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTPATH
-
-# install tree
-if hash tree 2>/dev/null; then
-	echo "tree installed"
-else
-	TREE_VERSION="tree-1.7.0"
-	wget http://mama.indstate.edu/users/ice/tree/src/$TREE_VERSION.tgz
-	tar zxvf $TREE_VERSION.tgz
-	cd $TREE_VERSION
-	make
-	sudo make install
-	cd ..
-fi
 
 # install xorriso
 if hash xorriso 2>/dev/null; then
