@@ -14,7 +14,7 @@ URL="http://distro.ibiblio.org/tinycorelinux/8.x/x86"
 INPUTISO="Core-current.iso"
 OUTPUTISO="quirkbot.iso"
 ROOTFS="rootfs"
-VOLUMEID="QURIKBOT"
+VOLUMEID="QUIRKBOT"
 EXTENSIONS=""
 BOOTARGS=""
 
@@ -67,13 +67,13 @@ popd
 
 # alter isolinux config to use our changes
 ISOLINUX_CFG="${TMPDIR}/boot/isolinux/isolinux.cfg"
-sed -i 's/prompt 1/prompt 0/' "${ISOLINUX_CFG}"
-sed -i "s/append/append cde ${BOOTARGS}/" "${ISOLINUX_CFG}"
+sed -i "" 's/prompt 1/prompt 0/' "${ISOLINUX_CFG}"
+sed -i "" "s/append/append cde ${BOOTARGS}/" "${ISOLINUX_CFG}"
 
 
 # build the rootfs and place it on the iso
 if [ -d ${ROOTFS} ] ; then
-    sed -i "/^\tinitrd/ s/$/,\/boot\/overlay.gz/" "${ISOLINUX_CFG}"
+    sed -i "" "/^\tinitrd/ s/$/,\/boot\/overlay.gz/" "${ISOLINUX_CFG}"
     chmod -R u+w "${TMPDIR}/boot"
     pushd "${ROOTFS}"
         find | cpio -o -H newc | gzip -2 > "${TMPDIR}/boot/overlay.gz"

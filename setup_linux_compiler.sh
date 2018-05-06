@@ -12,7 +12,6 @@ BASE=$(pwd)
 # install dependencies
 echo "#########################################################################"
 echo "installing dependencies"
-#tce-load -wi node strace perl5 curl
 #npm install
 cp -r "$ROOT/node_modules" "$BASE/node_modules"
 

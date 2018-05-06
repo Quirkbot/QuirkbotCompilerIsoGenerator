@@ -10,12 +10,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | b
 export NVM_DIR="/root/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-nvm install 9.2.0
+nvm install 10.0.0
 npm --version
 nvm --version
 npm install
 
 npm install quirkbot-arduino-builder@0.0.5
-npm install quirkbot-arduino-hardware@0.4.9
-npm install quirkbot-arduino-library@2.5.7
+npm install quirkbot-arduino-hardware@0.4.10
+npm install quirkbot-arduino-library@2.6.2
 npm install quirkbot-avr-gcc@1.0.1

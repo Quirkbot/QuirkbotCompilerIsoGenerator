@@ -20,6 +20,6 @@ fi
 # npm install
 npm install \
 quirkbot-arduino-builder@0.0.5 \
-quirkbot-arduino-hardware@0.4.9 \
-quirkbot-arduino-library@2.5.7 \
+quirkbot-arduino-hardware@0.4.10 \
+quirkbot-arduino-library@2.6.2 \
 quirkbot-avr-gcc@1.0.1
