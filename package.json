@@ -1,6 +1,6 @@
 {
   "name": "quirkbotcompilerisogenerator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "quirkbot-arduino-builder": "0.0.5",
     "quirkbot-arduino-hardware": "^0.4.9",
